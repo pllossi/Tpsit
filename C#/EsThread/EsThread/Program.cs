@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace EsThread
 {
@@ -6,21 +7,47 @@ namespace EsThread
     {
         static void Main(string[] args)
         {
-            Thread t = new Thread(Test.Method);
-            Console.WriteLine("Starting thread...");
-            t.Start();
-            Console.WriteLine(t.ThreadState);
-            Thread.Sleep(30000); 
-            Console.WriteLine("Main thread ending.");
-            t.Join();
-        }
-    }
+            object res1 = new object();
+            object res2 = new object();
 
-    static class Test
-    {
-        public static void Method()
-        {
-            Console.WriteLine("Test Method");
+            var t1 = new Thread(() =>
+            {
+                Console.WriteLine("Thread 1: locking res1");
+                lock (res1)
+                {
+                    Console.WriteLine("Thread 1: locked res1");
+                    System.Threading.Thread.Sleep(100);
+                    Console.WriteLine("Thread 1: waiting for res2");
+                    lock (res2)
+                    {
+                        Console.WriteLine("Thread 1: locked res2");
+                    }
+                }
+            });
+
+            var t2 = new Thread(() =>
+            {
+                Console.WriteLine("Thread 2: locking res2");
+                lock (res2)
+                {
+                    Console.WriteLine("Thread 2: locked res2");
+                    System.Threading.Thread.Sleep(100);
+                    Console.WriteLine("Thread 2: waiting for res1");
+                    lock (res1)
+                    {
+                        Console.WriteLine("Thread 2: locked res1");
+                    }
+                }
+            });
+
+            t1.Start();
+            t2.Start();
+
+            // i Join restano bloccati se si verifica il deadlock
+            t1.Join();
+            t2.Join();
+            //devo fare 2 thread che finiscono in deadlock per richiesta della stessa risorsa
+
         }
     }
 }
