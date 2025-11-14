@@ -9,19 +9,22 @@ namespace Mercato
 {
     public class Rifornitore
     {
-        private readonly AutoResetEvent _tickEvent = new AutoResetEvent(true);
-        public void MettiOggetti(List<string> bancone)
+        public void MettiOggetti(List<string> bancone, AutoResetEvent _tickEvent)
         {
-            _tickEvent.WaitOne();
-            var rand = new Random();
-            while (bancone.Count != 20)
+            while (true)
             {
-                rand.Next(97, 123);
-                bancone.Add(Convert.ToString((char)rand.Next(97, 123)));
-                Console.WriteLine("Aggiunto: " + bancone.Last());
-                Thread.Sleep(50);
+                _tickEvent.WaitOne();
+                var rand = new Random();
+                while (bancone.Count < 20)
+                {
+                    rand.Next(97, 123);
+                    bancone.Add(Convert.ToString((char)rand.Next(97, 123)));
+                    Console.WriteLine("Aggiunto: " + bancone.Last());
+                    _tickEvent.Set();
+                    Thread.Sleep(500);
+                }
+                _tickEvent.Set();
             }
-            _tickEvent.Set();
         }
     }
 }

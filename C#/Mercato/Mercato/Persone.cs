@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace Mercato
 {
     public class Persone
     {
-        private readonly AutoResetEvent _tickEvent = new AutoResetEvent(false);
-        public void PrendiOggetti(List<string> bancone)
+        public void PrendiOggetti(List<string> bancone, AutoResetEvent _tickEvent, MercatoStato stato)
         {
-            _tickEvent.WaitOne();
-            var rand = new Random();
-            rand.Next(0, bancone.Count);
-            for (int i = 0; i < bancone.Count; i++)
+            while (true)
             {
-                Console.WriteLine("Preso: " + bancone.First());
-                bancone.RemoveAt(0);
-                Thread.Sleep(100);
+                _tickEvent.WaitOne();
+
+                while (bancone.Count > 0 && stato.IsOpen)
+                {
+                    Console.WriteLine("Rimosso: " + bancone.First());
+                    bancone.RemoveAt(0);
+                    Thread.Sleep(1000);
+                }
+
+                _tickEvent.Set();
             }
-            _tickEvent.Set();
         }
     }
 }
