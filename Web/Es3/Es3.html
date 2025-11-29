@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <header>
+        <h1>
+            Modulo di Prova
+        </h1>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <legend>Anagrafica</legend>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome"/>
+                <label for="cognome">Cognome:</label>
+                <input type="text" id="cognome" name="cognome"/>
+                <label for="Data di Nascita">Data di Nascita:</label>
+                <input type="date" id="Data di Nascita" name="Data di Nascita"/>
+            </fieldset>
+            <fieldset>
+                <legend>Anagrafica</legend>
+                <label for="email">Email(obbligatorio):</label>
+                <input type="email" id="email" name="email" required/>
+                <fieldset>
+                    <legend>A quale newsletter iscriversi</legend>
+                    <input type="checkbox" id="Cucina" name="Cucina"/>
+                    <label for="Cucina">Cucina</label>
+                    <input type="checkbox" id="Libri" name="Libri"/>
+                    <label for="Libri">Libri</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Settimanale o mensile?</legend>
+                    <input type="radio" id="Settimanale" name="Frequenza" value="Settimanale"/>
+                    <label for="Settimanale">Settimanale</label>
+                    <input type="radio" id="Mensile" name="Frequenza" value="Mensile"/>
+                    <label for="Mensile">Mensile</label>
+                </fieldset>
+            </fieldset>
+            <label for="Password">Password (obbligatorio,min.8 caratteri)</label>
+            <input type="password" id="Password" name="Password" minlength="8" required/>
+            <input type="submit" value="Invia"/>
+        </form>
+    </main>
+</body>
+</html>
