@@ -1,43 +1,165 @@
-<!DOCTYPE html>
-<html lang="it">
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", "Segoe UI", sans-serif;
+}
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Pagina di login della classe 4N</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" type="text/css" />
-</head>
+body {
+    background: #fdfdfd;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
-<body>
-    <header>
-        <h1>PAGINA DI LOGIN DELLA CLASSE 4N</h1>
-    </header>
+header {
+    background: #fff;
+    border-bottom: 4px solid #dcdcdc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    padding: 20px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
 
-    <main>
+h1 {
+    color: #1c32d9;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
 
-        <form id="login-form">
-            <h2 id="login-title">Login</h2>
-            <div>
-                <label for="email">Email:</label>
-                <input id="email" type="email" placeholder="utente@mail.it" />
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input id="password" type="password" placeholder="password" />
-            </div>
-            <button type="submit">ACCEDI</button>
-        </form>
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 160px;
+    padding: 90px 80px 100px;
+}
 
+#login-form {
+    width: min(90vw, 520px);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 18px 34px rgba(0, 0, 0, 0.12);
+    padding: 34px 44px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
 
-        <form id="meteo-form">
-            <h3 id="meteo-title">Il meteo di oggi:</h3>
-            <p>È molto bello</p>
-        </form>
-    </main>
+#login-title {
+    font-size: 1.35rem;
+    text-align: center;
+    margin-bottom: 4px;
+}
 
-    <footer>
-        <p>CLASSE 4N - 04/12/2025</p>
-    </footer>
-</body>
+#login-form div {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
 
-</html>
+#login-form label {
+    flex: 0 0 90px;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+#login-form input {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid #1c2ff0;
+    padding: 8px 0 6px;
+    font-size: 1rem;
+    background: transparent;
+    transition: border-color 0.2s ease;
+}
+
+#login-form input:focus {
+    outline: none;
+    border-bottom-color: #2f34d2;
+}
+
+#login-form button {
+    width: 100%;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background: #d1d1d4;
+    color: #1b1b1b;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+#login-form button:hover {
+    background: #c6c6ca;
+}
+
+#meteo-form {
+    width: 260px;
+    min-height: 520px;
+    background: #fff;
+    border-radius: 130px;
+    box-shadow: 0 18px 28px rgba(0, 0, 0, 0.12);
+    padding: 80px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 14px;
+}
+
+#meteo-title {
+    font-size: 1.1rem;
+}
+
+footer {
+    background: #d5d5d8;
+    padding: 18px 12px;
+    text-align: center;
+    color: #1c32d9;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+}
+
+@media (max-width: 960px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+        gap: 36px;
+        padding: 40px 24px 60px;
+    }
+
+    #login-form {
+        width: min(95vw, 540px);
+        align-items: stretch;
+    }
+
+    #login-form div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    #login-form label,
+    #login-form input {
+        width: 100%;
+    }
+
+    #meteo-form {
+        width: min(90vw, 420px);
+        min-height: 250px;
+        border-radius: 28px;
+        padding: 32px 26px;
+        gap: 10px;
+    }
+}
