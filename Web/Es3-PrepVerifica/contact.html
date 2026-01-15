@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contatti</title>
+</head>
+<body>
+    <header>
+        <h1>Contatti</h1>
+    </header>
+    <main>
+        <fieldset>
+            <legend>Inserisci i tuoi dati di contatto</legend>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" name="telefono" id="telefono">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="esempio@mail.com">
+        </fieldset>
+        <fieldset>
+            <legend>A cosa vuoi iscriverti?</legend>
+            <ul>
+                <li>
+                    <input type="radio" name="newsletter" id="newsletter">
+                    <label for="newsletter">Newsletter</label>
+                </li>
+                <li>
+                    <input type="radio" name="Notifiche Progetti" id="notifiche">
+                    <label for="notifiche">Notifiche Progetti</label>
+                </li>
+                <li>
+                    <input type="radio" name="Nulla" id="nulla">
+                    <label for="nulla">Nulla</label>
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Validazione</legend>
+            <label for="DataNascita">Data di Nascita:</label>
+            <input type="date" name="DataNascita" id="DataNascita">
+            <p>Quali di queste immagini sono corrette?</p>
+            <ol>
+                <img src="source/stock.jpg" alt="strecth" width="75" height="40">
+                <li>
+                    <label for="Img1">Immagine 1: </label>
+                    <input type="checkbox" name="Img1" id="Img1">
+                </li>
+                <img src="source/stock.jpg" alt="Widened" width="120" height="75">
+                <li>
+                    <label for="Img2">Immagine 2: </label>
+                    <input type="checkbox" name="Img2" id="Img2">
+                </li>
+                <img src="source/stock.jpg" alt="normal one" width="50" height="50">
+                <li>
+                    <label for="Img3">Immagine 3: </label>
+                    <input type="checkbox" name="Img3" id="Img3">
+                </li>
+            </ol>
+        </fieldset>
+    </main>
+</body>
+</html>
