@@ -85,7 +85,7 @@ button:focus-visible {
 }
 
 footer {
-	text-align: center;
+	text-align: right;
 	padding: 1rem;
 	background: #dbeafe;
 	color: #1e3a8a;
