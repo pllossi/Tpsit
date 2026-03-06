@@ -1,0 +1,75 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9fafb;
+    color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.25);
+}
+header h1 {
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    letter-spacing: 0.02em;
+}
+main {
+    width: min(920px, 92%);
+    margin: 2rem auto;
+    display: grid;
+    gap: 1rem;
+    flex: 1;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+}
+form h2 {
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    color: #000000;
+    margin-bottom: 0.5rem;
+}
+button {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+}
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(29, 78, 216, 0.3);
+}
+footer {
+    background: #1f2937;
+    color: #f3f4f6;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-top: auto;
+}
+footer p {
+    font-size: 0.95rem;
+}
+
