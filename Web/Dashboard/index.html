@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataCore — Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scanlines"></div>
+
+  <header>
+    <div class="header-left">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">DATACORE</span>
+      <span class="logo-bracket">]</span>
+    </div>
+    <div class="header-center">
+      <span class="blink-dot"></span>
+      <span id="clock"></span>
+    </div>
+    <div class="header-right">
+      <span class="tag">SISTEMA v2.4.1</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="top-bar">
+      <div class="title-block">
+        <h1>MONITORAGGIO RISORSE</h1>
+        <p class="subtitle">Endpoint: jsonplaceholder.typicode.com / posts</p>
+      </div>
+      <div class="stats-bar" id="stats-bar">
+        <div class="stat-item">
+          <span class="stat-label">TOTALE</span>
+          <span class="stat-value" id="stat-total">—</span>
+        </div>
+        <div class="stat-item online">
+          <span class="stat-label">ONLINE</span>
+          <span class="stat-value" id="stat-online">—</span>
+        </div>
+        <div class="stat-item offline">
+          <span class="stat-label">OFFLINE</span>
+          <span class="stat-value" id="stat-offline">—</span>
+        </div>
+      </div>
+      <button id="refresh-btn" onclick="loadResources()">&#x21BA; AGGIORNA</button>
+    </div>
+
+    <div id="loading" class="loading-state">
+      <div class="loader-ring"></div>
+      <p>CARICAMENTO IN CORSO<span class="dot-anim">...</span></p>
+    </div>
+
+    <div id="error-state" class="error-state hidden">
+      <p class="error-code">ERR_NETWORK</p>
+      <p id="error-msg"></p>
+    </div>
+
+    <div id="dashboard" class="dashboard hidden"></div>
+  </main>
+
+  <footer>
+    <span>DATACORE MONITOR &copy; 2024</span>
+    <span id="last-update">Ultimo aggiornamento: —</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
