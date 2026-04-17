@@ -1,0 +1,12 @@
+.custom-header-footer {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.cont-princ {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(49, 49, 49, 0.867);
+}
