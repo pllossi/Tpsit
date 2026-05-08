@@ -1,0 +1,67 @@
+body {
+    background-color: #121212;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.cv-header {
+    background-color: #b30000; 
+}
+
+.cv-btn-primary {
+    background-color: #cc0000;
+    color: white;
+    border: none;
+}
+
+.cv-btn-primary:hover {
+    background-color: #a00000;
+    color: white;
+}
+
+.cv-card {
+    border-radius: 8px;
+    background-color: #1e1e1e !important;
+}
+
+.form-control::placeholder {
+    color: #b0b0b0;
+}
+
+.voto-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.voto-positivo {
+    background-color: #28a745; 
+}
+.voto-negativo {
+    background-color: #dc3545; 
+}
+
+.voto-quasi-positivo {
+    background-color: #ff9307; 
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+#icona {
+    font-size: 1.2rem;
+}

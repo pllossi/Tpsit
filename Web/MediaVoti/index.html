@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Voti</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="script.js" defer></script>
+</head>
+
+<body class="bg-dark text-light">
+    <header class="cv-header text-white px-4 py-3 d-flex align-items-center justify-content-between shadow-sm">
+        <div class="d-flex align-items-center">
+            <h1 class="m-0 fs-4 fw-bold">Media Voti</h1>
+        </div>
+    </header>
+    <main class="container mt-4 mb-5 text-light">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow-sm border-0 mb-4 cv-card bg-dark text-light">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase fw-bold text-secondary mb-4 fs-6 border-bottom border-secondary pb-2">Inserimento Voti
+                        </h5>
+                        <div class="input-group">
+                            <input type="number" id="votoInput" class="form-control bg-secondary text-light border-secondary"
+                                placeholder="Inserisci un voto da 1 a 10" min="1" max="10" step="0.5">
+                            <button class="btn cv-btn-primary" id="aggiungiBtn">Aggiungi Voto</button>
+                        </div>
+                        <div id="errorMsg"
+                            class="text-danger mt-2 d-none small">Per favore inserisci un voto numerico valido tra 1 e 10.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card shadow-sm border-0 cv-card bg-dark text-light">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center border-bottom border-secondary pb-2 mb-4">
+                            <h5 class="card-title text-uppercase fw-bold text-secondary mb-0 fs-6">Elenco Voti</h5>
+                            <div id="risultato" class="text-end d-none">
+                                <span class="fw-bold text-secondary me-2 border-end border-secondary pe-2">Media</span>
+                                <span id="mediaValore" class="fs-4 fw-bold">0.00</span>
+                                <span id="icona" class="ms-1"></span>
+                            </div>
+                        </div>
+
+                        <div id="votiList" class="d-flex flex-wrap gap-2">
+                            <p class="text-secondary w-100 text-center py-4 my-0" id="noVotiMsg">
+                                Nessun voto presente. Aggiungi il primo voto!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center mt-auto py-3 text-secondary border-top border-secondary cv-header text-white">
+        <small>Boschi Filippo - 4N - 2026</small>
+    </footer>
+</body>
+
+</html>
