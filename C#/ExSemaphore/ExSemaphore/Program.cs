@@ -19,6 +19,7 @@
         /// </summary>
         public static void Metti()
         {
+            Console.Write("N scritture: " + NumVal + "\n"); //stampo il numero di valori da inserire nel buffer
             List<int> list = new List<int>(); //creo una lista per tenere traccia dei numeri inseriti nel buffer
             for (int i = 0; i < NumVal; i++) //ciclo per inserire i numeri nel buffer
             {
